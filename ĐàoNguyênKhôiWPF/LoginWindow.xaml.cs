@@ -37,8 +37,8 @@ namespace ĐàoNguyênKhôiWPF
             if (employee != null)
             {
                 // Login successful, proceed to the main application window
-                MainWindow mainWindow = new MainWindow(employee);
-                mainWindow.Show();
+                AdminDashBoardWindow adbw = new AdminDashBoardWindow(employee);
+                adbw.Show();
                 this.Close(); // Close the login window
             }
             else

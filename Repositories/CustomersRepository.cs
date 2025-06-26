@@ -11,6 +11,17 @@ namespace Repositories
     public class CustomersRepository : ICustomersRepository
     {
         CustomerDAO customerDAO = new CustomerDAO();
+
+        public bool AddCustomer(Customers customer)
+        {
+            return customerDAO.AddCustomer(customer);
+        }
+
+        public bool DeleteCustomer(int customerId)
+        {
+            return customerDAO.DeleteCustomer(customerId);
+        }
+
         //public void GenerateSampleData()
         //{
         //    customerDAO.GenerateSampleData();
@@ -19,6 +30,16 @@ namespace Repositories
         public List<Customers> GetAllCustomers()
         {
             return customerDAO.GetAllCustomers();
+        }
+
+        public Customers? GetCustomerById(int customerId)
+        {
+            return customerDAO.GetCustomerById(customerId);
+        }
+
+        public bool UpdateCustomer(Customers customer)
+        {
+            return customerDAO.UpdateCustomer(customer);
         }
     }
 }

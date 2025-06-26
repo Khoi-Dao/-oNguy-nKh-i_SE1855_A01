@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="AdminDashBoardWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button x:Name="btnCustomerManagement" Content="Customers Management" HorizontalAlignment="Left" Margin="42,58,0,0" VerticalAlignment="Top" Height="57" Width="153" Click="btnCustomerManagement_Click"/>
+        <Button x:Name="btnProductManagement" Content="Products Management" HorizontalAlignment="Left" Margin="42,160,0,0" VerticalAlignment="Top" Height="57" Width="153" Click="btnProductManagement_Click"/>
+
+
     </Grid>
 </Window>

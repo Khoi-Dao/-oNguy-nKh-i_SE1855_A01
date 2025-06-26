@@ -12,5 +12,9 @@ namespace Services
     {
         //public void GenerateSampleData();
         public List<Customers> GetAllCustomers();
+        public Customers? GetCustomerById(int customerId);
+        public bool AddCustomer(Customers customer);
+        public bool UpdateCustomer(Customers customer);
+        public bool DeleteCustomer(int customerId);
     }
 }

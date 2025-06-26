@@ -15,6 +15,17 @@ namespace Services
         {
             icustomerRepository = new CustomersRepository();
         }
+
+        public bool AddCustomer(Customers customer)
+        {
+            return icustomerRepository.AddCustomer(customer);
+        }
+
+        public bool DeleteCustomer(int customerId)
+        {
+            return icustomerRepository.DeleteCustomer(customerId);
+        }
+
         //public void GenerateSampleData()
         //{
         //    icustomerRepository.GenerateSampleData();
@@ -22,6 +33,16 @@ namespace Services
         public List<Customers> GetAllCustomers()
         {
             return icustomerRepository.GetAllCustomers();
+        }
+
+        public Customers? GetCustomerById(int customerId)
+        {
+            return icustomerRepository.GetCustomerById(customerId);
+        }
+
+        public bool UpdateCustomer(Customers customer)
+        {
+            return icustomerRepository.UpdateCustomer(customer);
         }
     }
 }

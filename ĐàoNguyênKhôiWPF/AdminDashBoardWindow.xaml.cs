@@ -21,10 +21,28 @@ namespace ĐàoNguyênKhôiWPF
     /// </summary>
     public partial class AdminDashBoardWindow : Window
     {
-
-        public AdminDashBoardWindow()
+        private Employees iloggedInEmployee;
+        readonly ICustomerService icustomerService;
+        bool isCompleted = false;
+        public AdminDashBoardWindow(Employees loggedInEmployee)
         {
             InitializeComponent();
+            icustomerService = new CustomerService();
+            iloggedInEmployee = new Employees();
+
+            this.Title = $"Welcome, {iloggedInEmployee.Name}";
+        }
+
+        private void btnCustomerManagement_Click(object sender, RoutedEventArgs e)
+        {
+            CustomerManagementWindow cmw = new CustomerManagementWindow();
+            cmw.Show();
+        }
+
+        private void btnProductManagement_Click(object sender, RoutedEventArgs e)
+        {
+            ProductManagementWindow pmw = new ProductManagementWindow();
+            pmw.Show();
         }
     }
 }

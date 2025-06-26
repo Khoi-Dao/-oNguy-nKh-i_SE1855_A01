@@ -1,0 +1,48 @@
+﻿<Window x:Class="ĐàoNguyênKhôiWPF.CustomerManagementWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ĐàoNguyênKhôiWPF"
+        mc:Ignorable="d"
+        Title="CustomerManagementWindow" Height="450" Width="800">
+    <Grid>
+        <ListView x:Name="lvCustomers" d:ItemsSource="{d:SampleData ItemCount=5}" FontSize="20" SelectionChanged="lvCustomert_SelectionChanged" Margin="0,0,0,222">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Mã Khách hành" DisplayMemberBinding="{Binding CustomerID}"/>
+                    <GridViewColumn Header="Tên Công Ty KH" DisplayMemberBinding="{Binding CompanyName}"/>
+                    <GridViewColumn Header="Tên Liên Lạc" DisplayMemberBinding="{Binding ContactName}"/>
+                    <GridViewColumn Header="Tư Cách Liên Lạc" DisplayMemberBinding="{Binding ContactTitle}"/>
+                    <GridViewColumn Header="Địa Chỉ" DisplayMemberBinding="{Binding Address}"/>
+                    <GridViewColumn Header="SĐT" DisplayMemberBinding="{Binding Phone}"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Exit" HorizontalAlignment="Left" Margin="605,377,0,0" VerticalAlignment="Top" Width="36" Click="Button_Click"/>
+        <Label Content="Mã Khách Hàng" HorizontalAlignment="Left" Margin="22,217,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtCustomerId" HorizontalAlignment="Left" Margin="119,225,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Label Content="Tên Công Ty" HorizontalAlignment="Left" Margin="22,257,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tên Liên Lạc" HorizontalAlignment="Left" Margin="22,298,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tư Cách Liên Lạc" HorizontalAlignment="Left" Margin="278,221,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtCompanyName" HorizontalAlignment="Left" Margin="119,265,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtContactName" HorizontalAlignment="Left" Margin="119,302,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtContactTitle" HorizontalAlignment="Left" Margin="425,225,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" RenderTransformOrigin="2.562,-2.822"/>
+
+
+
+        <Button x:Name="btnThemKhachHang" Content="Thêm khách hàng mới" HorizontalAlignment="Left" Margin="41,380,0,0" VerticalAlignment="Top" Click="btnThemKhachHang_Click"/>
+        <Button x:Name="btnSua" Content="Sửa" HorizontalAlignment="Left" Margin="209,379,0,0" VerticalAlignment="Top" FontSize="16" Click="btnSua_Click"/>
+        <Button x:Name="btnXoa" Content="Xóa" HorizontalAlignment="Left" Margin="263,382,0,0" VerticalAlignment="Top" FontSize="16" Click="btnXoa_Click"/>
+        <Label Content="Địa Chỉ" HorizontalAlignment="Left" Margin="278,261,0,0" VerticalAlignment="Top"/>
+        <Label Content="SĐT" HorizontalAlignment="Left" Margin="278,298,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtAddress" HorizontalAlignment="Left" Margin="425,265,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" RenderTransformOrigin="2.562,-2.822"/>
+        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Margin="425,302,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" RenderTransformOrigin="2.562,-2.822"/>
+        <Label Content="Tìm kiếm bằng Id" HorizontalAlignment="Left" Margin="8,329,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtSearchByCustomerId" HorizontalAlignment="Left" Margin="119,337,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnSearch" Content="Tìm" HorizontalAlignment="Left" Margin="259,340,0,0" VerticalAlignment="Top" Click="btnSearch_Click" FontSize="16"/>
+
+
+    </Grid>
+</Window>
